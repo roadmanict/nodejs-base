@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig-postinstall.json",
+  "compilerOptions": {
+    "declaration": true
+  },
+  "include": [
+    "src"
+  ]
+}
