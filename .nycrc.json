@@ -4,6 +4,10 @@
     ".ts",
     ".tsx"
   ],
+  "reporter": [
+    "html",
+    "text-summary"
+  ],
   "exclude": [
     "**/*.d.ts",
     "coverage/**",
@@ -13,5 +17,6 @@
     "**/*{.,-}{test,spec}.ts",
     "**/__tests__/**",
     "**/node_modules/**"
-  ]
+  ],
+  "all": true
 }
