@@ -1,5 +1,4 @@
 {
-  "cache": false,
   "extension": [
     ".ts",
     ".tsx"
@@ -12,8 +11,8 @@
     "**/*.d.ts",
     "coverage/**",
     "packages/*/test/**",
-    "test/**",
-    "test{,-*}.ts",
+    "spec/**",
+    "spec{,-*}.ts",
     "**/*{.,-}{test,spec}.ts",
     "**/__tests__/**",
     "**/node_modules/**"
