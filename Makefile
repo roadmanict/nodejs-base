@@ -1,4 +1,4 @@
-PATH  := node_modules/.bin:$(PATH)
+PATH := node_modules/.bin:$(PATH)
 
 .PHONY: clean tslint
 
@@ -7,3 +7,6 @@ clean:
 
 tslint:
 	tslint --config node_modules/@roadmanict/nodejs-code-style/tslint.json
+
+path:
+	export $PATH
