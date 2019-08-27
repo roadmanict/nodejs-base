@@ -26,7 +26,7 @@ ts-incremental:
 	tsc --incremental
 
 test:
-	jasmine
+	jasmine --config=${JASMINE_CONFIG_PATH}
 
 coverage:
 	nyc --nycrc-path ${NYC_CONFIG_PATH}  make test
