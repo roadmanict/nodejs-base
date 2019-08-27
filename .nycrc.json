@@ -1,21 +1,23 @@
 {
-  "extension": [
-    ".ts",
-    ".tsx"
-  ],
-  "reporter": [
-    "html",
-    "text-summary"
-  ],
-  "exclude": [
-    "**/*.d.ts",
-    "coverage/**",
-    "packages/*/test/**",
-    "spec/**",
-    "spec{,-*}.ts",
-    "**/*{.,-}{test,spec}.ts",
-    "**/__tests__/**",
-    "**/node_modules/**"
-  ],
-  "all": true
+    "extension": [
+        ".ts",
+        ".tsx"
+    ],
+    "reporter": [
+        "html",
+        "text-summary"
+    ],
+    "exclude": [
+        "**/*.d.ts",
+        "coverage/**",
+        "packages/*/test/**",
+        "spec/**",
+        "spec{,-*}.ts",
+        "**/*{.,-}{test,spec}.ts",
+        "**/__tests__/**",
+        "**/node_modules/**"
+    ],
+    "all": true,
+    "source-map": true,
+    "product-source-map": true
 }

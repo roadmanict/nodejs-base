@@ -29,12 +29,12 @@ test:
 	jasmine --config=${JASMINE_CONFIG_PATH}
 
 coverage:
-	nyc --nycrc-path ${NYC_CONFIG_PATH}  make test
+	nyc --nycrc-path ${NYC_CONFIG_PATH} make test
 
 build: audit tslint ts coverage
 
 watch: clean
-	nodemon --config ${NODEMON_CONFIG_PATH} --watch src --watch spec --exec "make tslint && make ts-incremental && make test"
+	nodemon --config ${NODEMON_CONFIG_PATH} --watch src --watch spec --exec "make tslint && make ts-incremental && make coverage"
 
 prepare: clean
 	tsc --declaration || exit 0
