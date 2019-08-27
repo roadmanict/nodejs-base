@@ -6,9 +6,9 @@ JASMINE_CONFIG_PATH := node_modules/@roadmanict/nodejs-code-style/jasmine.json
 NYC_CONFIG_PATH     := node_modules/@roadmanict/nodejs-code-style/.nycrc.json
 NODEMON_CONFIG_PATH := node_modules/@roadmanict/nodejs-code-style/nodemon.json
 
-.PHONY: all
+.PHONY: all clean audit tslint ts ts-incremental test coverage build watch prepare
 
-all: clean audit tslint ts ts-incremental test coverage build watch prepare
+all: build
 
 clean:
 	rm -rf dist .nyc_output coverage
