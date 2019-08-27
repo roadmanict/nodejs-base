@@ -29,7 +29,7 @@ test:
 	jasmine --config=${JASMINE_CONFIG_PATH}
 
 coverage:
-	nyc --nycrc-path ${NYC_CONFIG_PATH} make test
+	nyc --require=source-map-support/register --nycrc-path ${NYC_CONFIG_PATH} jasmine --config=${JASMINE_CONFIG_PATH}
 
 build: audit tslint ts coverage
 
