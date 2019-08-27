@@ -21,7 +21,7 @@ ts-incremental:
 	tsc --incremental
 
 test:
-	nyc --nycrc-path node_modules/@roadmanict/nodejs-code-style/.nycrc.json jasmine --config node_modules/@roadmanict/nodejs-code-style/jasmine.json
+	nyc --nycrc-path node_modules/@roadmanict/nodejs-code-style/.nycrc.json jasmine --config=node_modules/@roadmanict/nodejs-code-style/jasmine.json
 
 build: clean audit tslint ts test
 
