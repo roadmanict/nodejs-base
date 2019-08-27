@@ -1,7 +1,7 @@
 PATH  := ${PWD}/node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 
-.PHONY: clean tslint
+.PHONY: all
 
 all: clean audit tslint ts test
 
@@ -15,7 +15,7 @@ tslint:
 	tslint --config node_modules/@roadmanict/nodejs-code-style/tslint.json 'spec/**/*.ts' 'src/**/*.ts'
 
 ts:
-	tsc
+	tsc --build node_modules/@roadmanict/nodejs-code-style/tsconfig.json
 
 ts-incremental:
 	tsc --incremental
