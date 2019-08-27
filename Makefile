@@ -8,7 +8,7 @@ NODEMON_CONFIG_PATH := node_modules/@roadmanict/nodejs-code-style/nodemon.json
 
 .PHONY: all
 
-all: audit tslint ts test
+all: clean audit tslint ts ts-incremental test coverage build watch prepare
 
 clean:
 	rm -rf dist .nyc_output coverage
@@ -38,6 +38,3 @@ watch: clean
 
 prepare: clean
 	tsc --declaration || exit 0
-
-path:
-	echo ${PATH}
