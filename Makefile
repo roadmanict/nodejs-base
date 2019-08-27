@@ -15,7 +15,7 @@ tslint:
 	tslint --config node_modules/@roadmanict/nodejs-code-style/tslint.json 'spec/**/*.ts' 'src/**/*.ts'
 
 ts:
-	tsc --project node_modules/@roadmanict/nodejs-code-style/tsconfig.json
+	tsc
 
 ts-incremental:
 	tsc --incremental
