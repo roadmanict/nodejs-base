@@ -7,7 +7,7 @@ clean:
 	rm -rf dist .nyc_output coverage
 
 tslint:
-	tslint --config node_modules/@roadmanict/nodejs-code-style/tslint.json
+	tslint --config node_modules/@roadmanict/nodejs-code-style/tslint.json 'spec/**/*.ts' 'src/**/*.ts'
 
 path:
 	echo ${PATH}
