@@ -1,9 +1,14 @@
 PATH  := ${PWD}/node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 
+TSLINT_CONFIG_PATH  := node_modules/@roadmanict/nodejs-code-style/tslint.json
+JASMINE_CONFIG_PATH := node_modules/@roadmanict/nodejs-code-style/jasmine.json
+NYC_CONFIG_PATH     := node_modules/@roadmanict/nodejs-code-style/.nycrc.json
+NODEMON_CONFIG_PATH := node_modules/@roadmanict/nodejs-code-style/nodemon.json
+
 .PHONY: all
 
-all: clean audit tslint ts test
+all: audit tslint ts test
 
 clean:
 	rm -rf dist .nyc_output coverage
@@ -12,21 +17,24 @@ audit:
 	npm audit
 
 tslint:
-	tslint --config node_modules/@roadmanict/nodejs-code-style/tslint.json 'spec/**/*.ts' 'src/**/*.ts'
+	tslint --config ${TSLINT_CONFIG_PATH} 'spec/**/*.ts' 'src/**/*.ts'
 
-ts:
+ts: clean
 	tsc
 
 ts-incremental:
 	tsc --incremental
 
 test:
-	nyc --nycrc-path node_modules/@roadmanict/nodejs-code-style/.nycrc.json jasmine --config=node_modules/@roadmanict/nodejs-code-style/jasmine.json
+	jasmine
 
-build: clean audit tslint ts test
+coverage:
+	nyc --nycrc-path ${NYC_CONFIG_PATH}  make test
+
+build: audit tslint ts coverage
 
 watch: clean
-	nodemon --config node_modules/@roadmanict/nodejs-code-style/nodemon.json --watch src --watch spec --exec "make tslint && make ts-incremental && make test"
+	nodemon --config ${NODEMON_CONFIG_PATH} --watch src --watch spec --exec "make tslint && make ts-incremental && make test"
 
 prepare: clean
 	tsc --declaration || exit 0
