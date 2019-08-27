@@ -28,5 +28,8 @@ build: clean audit tslint ts test
 watch: clean
 	nodemon --config node_modules/@roadmanict/nodejs-code-style/nodemon.json --watch src --watch spec --exec "make tslint && make ts-incremental && make test"
 
+prepare: clean
+	tsc --declaration || exit 0
+
 path:
 	echo ${PATH}
