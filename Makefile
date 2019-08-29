@@ -26,10 +26,10 @@ ts-incremental:
 	tsc --incremental
 
 test:
-	jasmine --config=${JASMINE_CONFIG_PATH}
+	nyc --nycrc-path ${NYC_CONFIG_PATH} jasmine --config=${JASMINE_CONFIG_PATH}
 
 coverage:
-	nyc --nycrc-path ${NYC_CONFIG_PATH} jasmine --config=${JASMINE_CONFIG_PATH}
+	nyc report --reporter=text-lcov | coveralls
 
 build: audit tslint ts coverage
 
