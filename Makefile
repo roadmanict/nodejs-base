@@ -31,7 +31,7 @@ test:
 coverage:
 	nyc report --reporter=text-lcov | coveralls
 
-build: audit tslint ts coverage
+build: audit tslint ts test
 
 watch: clean
 	nodemon --config ${NODEMON_CONFIG_PATH} --watch src --watch spec --exec "make tslint && make ts-incremental && make coverage"
