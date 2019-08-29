@@ -1,10 +1,10 @@
 PATH  := ${PWD}/node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 
-TSLINT_CONFIG_PATH  := node_modules/@roadmanict/nodejs-code-style/tslint.json
-JASMINE_CONFIG_PATH := node_modules/@roadmanict/nodejs-code-style/jasmine.json
-NYC_CONFIG_PATH     := node_modules/@roadmanict/nodejs-code-style/.nycrc.json
-NODEMON_CONFIG_PATH := node_modules/@roadmanict/nodejs-code-style/nodemon.json
+TSLINT_CONFIG_PATH  := node_modules/@roadmanict/nodejs-base/tslint.json
+JASMINE_CONFIG_PATH := node_modules/@roadmanict/nodejs-base/jasmine.json
+NYC_CONFIG_PATH     := node_modules/@roadmanict/nodejs-base/.nycrc.json
+NODEMON_CONFIG_PATH := node_modules/@roadmanict/nodejs-base/nodemon.json
 
 .PHONY: all clean audit tslint ts ts-incremental test coverage build watch prepare
 
@@ -29,7 +29,7 @@ test:
 	jasmine --config=${JASMINE_CONFIG_PATH}
 
 coverage:
-	nyc --require=source-map-support/register --nycrc-path ${NYC_CONFIG_PATH} jasmine --config=${JASMINE_CONFIG_PATH}
+	nyc --nycrc-path ${NYC_CONFIG_PATH} jasmine --config=${JASMINE_CONFIG_PATH}
 
 build: audit tslint ts coverage
 

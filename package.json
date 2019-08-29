@@ -1,10 +1,7 @@
 {
-  "name": "@roadmanict/nodejs-code-style",
+  "name": "@roadmanict/nodejs-base",
   "version": "1.0.0",
   "description": "Common code styles",
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "source-map-support": "^0.5.13"
-  }
+  "author": "Geert Weggemans",
+  "license": "MIT"
 }
