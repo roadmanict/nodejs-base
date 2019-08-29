@@ -32,7 +32,7 @@ test:
 	nyc --nycrc-path ${NYC_CONFIG_PATH} make jasmine
 
 coverage:
-	nyc report --reporter=text-lcov | coveralls
+	nyc --nycrc-path ${NYC_CONFIG_PATH} report --reporter=text-lcov | coveralls
 
 build: audit tslint ts test
 
