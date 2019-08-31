@@ -37,7 +37,7 @@ coverage:
 build: audit tslint ts test
 
 watch: clean
-	nodemon --config ${NODEMON_CONFIG_PATH} --watch src --watch spec --exec "make tslint && make ts-incremental && make coverage"
+	nodemon --config ${NODEMON_CONFIG_PATH} --watch src --watch spec --exec "make tslint && make ts-incremental && make test"
 
 prepare: clean
 	tsc --declaration || exit 0
