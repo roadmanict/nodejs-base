@@ -3,5 +3,14 @@
   "version": "1.0.0",
   "description": "Common code styles",
   "author": "Geert Weggemans",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jasmine": "^3.4.0",
+    "jasmine": "^3.4.0",
+    "nodemon": "^1.19.1",
+    "tslint": "^5.19.0"
+  },
+  "dependencies": {
+    "typescript": "^3.6.2"
+  }
 }
