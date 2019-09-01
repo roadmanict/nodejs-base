@@ -26,7 +26,7 @@ ts-incremental:
 	tsc --incremental
 
 jasmine:
-	jasmine --config=${JASMINE_CONFIG_PATH}
+	node -r source-map-support/register ./node_modules/.bin/jasmine --config=${JASMINE_CONFIG_PATH}
 
 test:
 	nyc --nycrc-path ${NYC_CONFIG_PATH} make jasmine
