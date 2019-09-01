@@ -1,7 +1,6 @@
 PATH  := ${PWD}/node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 
-TSLINT_CONFIG_PATH  := node_modules/@roadmanict/nodejs-base/tslint.json
 JASMINE_CONFIG_PATH := node_modules/@roadmanict/nodejs-base/jasmine.json
 NYC_CONFIG_PATH     := node_modules/@roadmanict/nodejs-base/.nycrc.json
 NODEMON_CONFIG_PATH := node_modules/@roadmanict/nodejs-base/nodemon.json
@@ -17,7 +16,7 @@ audit:
 	npm audit
 
 tslint:
-	tslint --config ${TSLINT_CONFIG_PATH} 'spec/**/*.ts' 'src/**/*.ts'
+	tslint 'spec/**/*.ts' 'src/**/*.ts'
 
 ts: clean
 	tsc
