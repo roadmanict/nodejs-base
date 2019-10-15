@@ -8,7 +8,7 @@
         "@types/jasmine": "3.4.0",
         "coveralls": "3.0.6",
         "jasmine": "3.4.0",
-        "nodemon": "1.19.2",
+        "nodemon": "1.19.4",
         "nyc": "14.1.1",
         "source-map-support": "0.5.13",
         "tslint": "5.19.0",
