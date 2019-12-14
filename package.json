@@ -6,7 +6,7 @@
     "license": "MIT",
     "dependencies": {
         "@types/jasmine": "3.4.0",
-        "coveralls": "3.0.6",
+        "coveralls": "3.0.9",
         "jasmine": "3.4.0",
         "nodemon": "1.19.2",
         "nyc": "14.1.1",
